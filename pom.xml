@@ -42,6 +42,14 @@ limitations under the License.
         <tag>HEAD</tag>
     </scm>
 
+    <distributionManagement>
+        <repository>
+            <id>aws-release</id>
+            <name>AWS Release Repository</name>
+            <url>s3://lendup.repos/maven/releases</url>
+        </repository>
+    </distributionManagement>
+
     <ciManagement>
         <system>Travis CI</system>
         <url>https://travis-ci.org/play1-maven-plugin/play1-maven-plugin</url>
@@ -408,6 +416,14 @@ limitations under the License.
                 </executions>
             </plugin>
         </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
     </build>
 
     <reporting>
