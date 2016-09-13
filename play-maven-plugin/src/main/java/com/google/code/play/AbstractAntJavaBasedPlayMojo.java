@@ -16,19 +16,18 @@
 
 package com.google.code.play;
 
-import java.io.File;
-import java.util.List;
-
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Parameter;
-
 import org.apache.tools.ant.BuildLogger;
 import org.apache.tools.ant.NoBannerLogger;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectHelper;
 import org.apache.tools.ant.taskdefs.Java;
 import org.apache.tools.ant.types.Environment;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * Base class for Ant Java task using mojos.
@@ -100,6 +99,7 @@ public abstract class AbstractAntJavaBasedPlayMojo
         logger.setMessageOutputLevel( Project.MSG_INFO );
         logger.setOutputPrintStream( System.out );
         logger.setErrorPrintStream( System.err );
+        logger.setEmacsMode( true );
 
         project.addBuildListener( logger );
 
